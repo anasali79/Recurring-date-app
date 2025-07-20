@@ -65,13 +65,13 @@ export function RecurrenceOptions() {
       <div className="space-y-6">
         <div>
           <Label className="text-sm font-medium text-gray-700 mb-4 block">Recurrence Type</Label>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+          <div className="grid grid-cols-2 gap-2 sm:grid-cols-2 sm:gap-3 lg:grid-cols-4">
             {recurrenceTypes.map(({ value, label, icon, description }) => (
               <button
                 key={value}
                 onClick={() => handleTypeChange(value)}
                 className={`
-                  flex flex-col items-center justify-center px-4 py-4 sm:py-6 rounded-xl border text-sm font-medium 
+                  flex flex-col items-center justify-center px-1 py-2 text-[11px] sm:px-4 sm:py-6 sm:text-sm rounded-xl border font-medium 
                   transition-all duration-300 transform hover:scale-105 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2
                   ${
                     type === value
@@ -82,9 +82,9 @@ export function RecurrenceOptions() {
                 aria-pressed={type === value}
                 aria-label={`Select ${label} recurrence type. ${description}`}
               >
-                <span className="text-2xl mb-2">{icon}</span>
-                <span className="font-semibold">{label}</span>
-                <span className={`text-xs mt-1 ${type === value ? "text-gray-200" : "text-gray-500"}`}>
+                <span className="text-lg sm:text-2xl mb-1 sm:mb-2">{icon}</span>
+                <span className="font-semibold leading-tight">{label}</span>
+                <span className={`mt-1 text-[9px] sm:text-xs ${type === value ? "text-gray-200" : "text-gray-500"}`}>
                   {description}
                 </span>
               </button>
