@@ -1,6 +1,6 @@
 import { render, screen, fireEvent, waitFor } from "@testing-library/react"
 import { RecurringDatePicker } from "@/components/recurring-date-picker"
-import jest from "jest" // Import jest to declare the variable
+import { jest } from '@jest/globals' // Import jest to declare the variable
 
 // Mock window.open for Google Calendar tests
 const mockWindowOpen = jest.fn()
@@ -42,7 +42,7 @@ describe("RecurringDatePicker Integration", () => {
 
     // Wait for calendar to appear and select a date
     await waitFor(() => {
-      const dateButton = screen.getByText("15")
+      const dateButton = screen.getAllByText("15")[0]
       fireEvent.click(dateButton)
     })
 
@@ -78,7 +78,7 @@ describe("RecurringDatePicker Integration", () => {
     fireEvent.click(startDateButton)
 
     await waitFor(() => {
-      const dateButton = screen.getByText("1")
+      const dateButton = screen.getAllByText("1")[0]
       fireEvent.click(dateButton)
     })
 
@@ -109,7 +109,7 @@ describe("RecurringDatePicker Integration", () => {
     fireEvent.click(startDateButton)
 
     await waitFor(() => {
-      const dateButton = screen.getByText("15")
+      const dateButton = screen.getAllByText("15")[0]
       fireEvent.click(dateButton)
     })
   })
@@ -122,7 +122,7 @@ describe("RecurringDatePicker Integration", () => {
     fireEvent.click(startDateButton)
 
     await waitFor(() => {
-      const dateButton = screen.getByText("1")
+      const dateButton = screen.getAllByText("1")[0]
       fireEvent.click(dateButton)
     })
 
@@ -162,7 +162,7 @@ describe("RecurringDatePicker Integration", () => {
     fireEvent.click(startDateButton)
 
     await waitFor(() => {
-      const startDate = screen.getByText("1")
+      const startDate = screen.getAllByText("1")[0]
       fireEvent.click(startDate)
     })
 
@@ -171,7 +171,7 @@ describe("RecurringDatePicker Integration", () => {
     fireEvent.click(endDateButton)
 
     await waitFor(() => {
-      const endDate = screen.getByText("10")
+      const endDate = screen.getAllByText("10")[0]
       fireEvent.click(endDate)
     })
 

@@ -1,7 +1,7 @@
 import type React from "react"
 import { renderHook, act } from "@testing-library/react"
 import { RecurrenceProvider, useRecurrence } from "@/components/recurring-date-picker/context/recurrence-context"
-import jest from "jest" // Import jest to fix the undeclared variable error
+import { jest } from '@jest/globals'
 
 // Mock the date generator
 jest.mock("@/components/recurring-date-picker/utils/date-generator", () => ({

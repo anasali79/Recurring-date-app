@@ -2,7 +2,7 @@ import type React from "react"
 import { render, screen, fireEvent } from "@testing-library/react"
 import { RecurrenceOptions } from "@/components/recurring-date-picker/components/recurrence-options"
 import { RecurrenceProvider } from "@/components/recurring-date-picker/context/recurrence-context"
-import jest from "jest" // Import jest to fix the undeclared variable error
+import { jest } from '@jest/globals'
 
 // Mock child components
 jest.mock("@/components/recurring-date-picker/components/weekly-options", () => ({
